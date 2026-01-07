@@ -1,1 +1,33 @@
-<p>formulario works!</p>
+<h2>Introducir resultado</h2>
+
+<form (ngSubmit)="enviar()">
+
+  <label>Equipo local</label>
+  <select [(ngModel)]="equipoLocalId" name="local" required>
+    <option [ngValue]="undefined">-- Selecciona equipo --</option>
+    <option *ngFor="let equipo of equipos" [value]="equipo.id">
+      {{ equipo.nombre }}
+    </option>
+  </select>
+
+  <label>Equipo visitante</label>
+  <select [(ngModel)]="equipoVisitanteId" name="visitante" required>
+    <option [ngValue]="undefined">-- Selecciona equipo --</option>
+    <option *ngFor="let equipo of equipos" [value]="equipo.id">
+      {{ equipo.nombre }}
+    </option>
+  </select>
+
+  <label>Goles local</label>
+  <input type="number" [(ngModel)]="golesLocal" name="golesLocal" min="0" required>
+
+  <label>Goles visitante</label>
+  <input type="number" [(ngModel)]="golesVisitante" name="golesVisitante" min="0" required>
+
+  <button type="submit">Añadir partido</button>
+
+</form>
+
+<div class="error" *ngIf="error">
+  {{ error }}
+</div>
