@@ -1,1 +1,33 @@
-<p>clasificacion works!</p>
+<h1>Clasificación de Liga</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Equipo</th>
+      <th>Puntos</th>
+      <th>PJ</th>
+      <th>PG</th>
+      <th>PE</th>
+      <th>PP</th>
+      <th>GF</th>
+      <th>GC</th>
+      <th>DG</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let equipo of equipos">
+      <td>
+        {{ equipo.nombre }}
+      </td>
+      <td>{{ equipo.puntos }}</td>
+      <td>{{ equipo.partidos_jugados }}</td>
+      <td>{{ equipo.partidos_ganados }}</td>
+      <td>{{ equipo.partidos_empatados }}</td>
+      <td>{{ equipo.partidos_perdidos }}</td>
+      <td>{{ equipo.goles_favor }}</td>
+      <td>{{ equipo.goles_contra }}</td>
+      <td>{{ equipo.diferencia_goles }}</td>
+    </tr>
+  </tbody>
+</table>

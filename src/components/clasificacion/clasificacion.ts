@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Equipo } from '../../app/models/equipo';
+import { Liga } from '../../app/services/liga';
+
 
 @Component({
   selector: 'app-clasificacion',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './clasificacion.html',
-  styleUrl: './clasificacion.css',
+  styleUrls: ['./clasificacion.css']
 })
 export class Clasificacion {
+
+  constructor(private liga: Liga) {}
+
+  get equipos(): Equipo[] {
+    return this.liga.getClasificacionOrdenada();
+  }
 
 }

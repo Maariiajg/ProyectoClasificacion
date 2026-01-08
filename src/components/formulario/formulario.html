@@ -5,7 +5,7 @@
   <label>Equipo local</label>
   <select [(ngModel)]="equipoLocalId" name="local" required>
     <option [ngValue]="undefined">-- Selecciona equipo --</option>
-    <option *ngFor="let equipo of equipos" [value]="equipo.id">
+    <option *ngFor="let equipo of equipos" [ngValue]="equipo.id">
       {{ equipo.nombre }}
     </option>
   </select>
@@ -13,7 +13,7 @@
   <label>Equipo visitante</label>
   <select [(ngModel)]="equipoVisitanteId" name="visitante" required>
     <option [ngValue]="undefined">-- Selecciona equipo --</option>
-    <option *ngFor="let equipo of equipos" [value]="equipo.id">
+    <option *ngFor="let equipo of equipos" [ngValue]="equipo.id">
       {{ equipo.nombre }}
     </option>
   </select>

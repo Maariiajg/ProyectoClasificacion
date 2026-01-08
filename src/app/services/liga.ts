@@ -6,7 +6,7 @@ import { Partido } from '../models/partido';
 @Injectable({
   providedIn: 'root'
 })
-export class LigaService {
+export class Liga {
 
   private _equipos: Equipo[] = [];
   private _partidos: Partido[] = [];
@@ -30,7 +30,7 @@ export class LigaService {
   /*BÚSQUEDAS*/
 
   getEquipoById(id: number): Equipo | undefined {
-    return this._equipos.find(e => e.id === id);
+    return this._equipos.find(e => Number(e.id) === Number(id));
   }
 
   /*LÓGICA DE CLASIFICACIÓN*/

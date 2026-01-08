@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { Equipo } from '../../app/models/equipo';
-import { LigaService } from '../../app/services/liga';
+import { FormsModule } from '@angular/forms';
+import { Liga } from '../../app/services/liga';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-formulario',
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './formulario.html',
   styleUrls: ['./formulario.css']
 })
@@ -19,7 +23,7 @@ export class Formulario {
 
   error: string = '';
 
-  constructor(private liga: LigaService) {
+  constructor(private liga: Liga) {
     this.equipos = this.liga.equipos;
   }
 
