@@ -12,7 +12,13 @@ export class Equipo {
         private _partidos_perdidos: number = 0,
         private _goles_favor: number = 0,
         private _goles_contra: number = 0,
-        private _jugadores: Jugador[] = []
+        private _jugadores: Jugador[] = [],
+
+        private _anio_fundacion: number = 0,
+        private _ciudad: string = '',
+        private _entrenador_actual: string = '',
+        private _numero_aficionados: number = 0,
+        private _colores: string[] = []
     ) {}
 
     // Getters y setters
@@ -36,6 +42,25 @@ export class Equipo {
     get jugadores(): Jugador[] { return this._jugadores; }
     set jugadores(value: Jugador[]) { this._jugadores = value; }
 
+
+
+
+    get anio_fundacion(): number { return this._anio_fundacion; }
+    set anio_fundacion(value: number) { this._anio_fundacion = value; }
+
+    get ciudad(): string { return this._ciudad; }
+    set ciudad(value: string) { this._ciudad = value; }
+
+    get entrenador_actual(): string { return this._entrenador_actual; }
+    set entrenador_actual(value: string) { this._entrenador_actual = value; }
+
+    get numero_aficionados(): number { return this._numero_aficionados; }
+    set numero_aficionados(value: number) { this._numero_aficionados = value; }
+
+    get colores(): string[] { return this._colores; }
+    set colores(value: string[]) { this._colores = value; }
+    
+    
     // Getters calculados
     get diferencia_goles(): number {
         return this._goles_favor - this._goles_contra;

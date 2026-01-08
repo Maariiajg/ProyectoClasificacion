@@ -4,7 +4,6 @@ import { Header } from '../components/header/header';
 import { Formulario } from '../components/formulario/formulario';
 import { Clasificacion } from '../components/clasificacion/clasificacion';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,4 +18,5 @@ import { Clasificacion } from '../components/clasificacion/clasificacion';
 })
 export class App {
   protected readonly title = signal('ProyectoClasificacion');
+  vistaActual: 'clasificacion' | 'formulario' = 'clasificacion'; // ← NUEVA PROPIEDAD
 }

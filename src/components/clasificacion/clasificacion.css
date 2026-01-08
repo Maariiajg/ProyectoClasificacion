@@ -1,0 +1,211 @@
+/* clasificacion.component.css - Estilo Profesional La Liga */
+
+.clasificacion {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.titulo::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626, #f97316);
+  border-radius: 2px;
+}
+
+.tabla-container {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.1),
+    0 1px 3px rgba(0,0,0,0.05);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+th {
+  padding: 1.5rem 1rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+th:first-child {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+th:last-child {
+  border-right: none;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+tbody tr:hover {
+  background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+td {
+  padding: 1.25rem 1rem;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+  color: #374151;
+}
+
+td:first-child {
+  text-align: left;
+  padding-left: 2rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.posicion {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: white;
+}
+
+/* Podium especial */
+tbody tr:nth-child(1) .posicion {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+tbody tr:nth-child(2) .posicion {
+  background: linear-gradient(135deg, #6b7280, #9ca3af);
+}
+
+tbody tr:nth-child(3) .posicion {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.enlace-equipo {
+  color: #1d4ed8;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.enlace-equipo:hover {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+
+.numeros-destacados {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+/* Responsive perfecto */
+@media (max-width: 1024px) {
+  .clasificacion {
+    padding: 0 1rem;
+  }
+  
+  th, td {
+    padding: 1rem 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabla-container {
+    border-radius: 16px;
+    margin: 0 0.5rem;
+  }
+  
+  .titulo {
+    font-size: 2.2rem;
+  }
+  
+  th, td {
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  th:first-child, td:first-child {
+    padding-left: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .tabla-container {
+    margin: 0;
+    border-radius: 12px;
+  }
+  
+  table {
+    min-width: 700px;
+  }
+  
+  .clasificacion {
+    padding: 0;
+    overflow-x: auto;
+  }
+}
