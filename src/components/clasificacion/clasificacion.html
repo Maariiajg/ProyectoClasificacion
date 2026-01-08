@@ -18,7 +18,9 @@
   <tbody>
     <tr *ngFor="let equipo of equipos">
       <td>
-        {{ equipo.nombre }}
+        <a [routerLink]="['/equipo', equipo.id]">
+          {{ equipo.nombre }}
+        </a>
       </td>
       <td>{{ equipo.puntos }}</td>
       <td>{{ equipo.partidos_jugados }}</td>
