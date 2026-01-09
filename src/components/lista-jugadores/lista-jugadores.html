@@ -1,1 +1,8 @@
-<p>lista-jugadores works!</p>
+<ul>
+  <li *ngFor="let jugador of jugadores">
+    <a [routerLink]="['/jugador', jugador.id]">
+      {{ jugador.nombre }}
+    </a>
+    — {{ jugador.posicion }} ({{ jugador.dorsal }})
+  </li>
+</ul>

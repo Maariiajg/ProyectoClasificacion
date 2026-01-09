@@ -5,6 +5,12 @@ export class Equipo {
     constructor(
         private _id: number,
         private _nombre: string,
+        private _anioFundacion: number,
+        private _ciudad: string,
+        private _entrenador: string,
+        private _numAficionados: number, 
+        private _colores: string[],
+        private _escudoUrl: string,
         private _puntos: number = 0,
         private _partidos_jugados: number = 0,
         private _partidos_ganados: number = 0,
@@ -12,54 +18,57 @@ export class Equipo {
         private _partidos_perdidos: number = 0,
         private _goles_favor: number = 0,
         private _goles_contra: number = 0,
-        private _jugadores: Jugador[] = [],
-
-        private _anio_fundacion: number = 0,
-        private _ciudad: string = '',
-        private _entrenador_actual: string = '',
-        private _numero_aficionados: number = 0,
-        private _colores: string[] = []
+        private _jugadores: Jugador[] = []
     ) {}
 
-    // Getters y setters
+    //getters y setters
     get id(): number { return this._id; }
     set id(value: number) { this._id = value; }
 
     get nombre(): string { return this._nombre; }
     set nombre(value: string) { this._nombre = value; }
 
-    get puntos(): number { return this._puntos; }
-    set puntos(value: number) { this._puntos = value; }
-
-    get partidos_jugados(): number { return this._partidos_jugados; }
-    get partidos_ganados(): number { return this._partidos_ganados; }
-    get partidos_empatados(): number { return this._partidos_empatados; }
-    get partidos_perdidos(): number { return this._partidos_perdidos; }
-
-    get goles_favor(): number { return this._goles_favor; }
-    get goles_contra(): number { return this._goles_contra; }
-
-    get jugadores(): Jugador[] { return this._jugadores; }
-    set jugadores(value: Jugador[]) { this._jugadores = value; }
-
-
-
-
-    get anio_fundacion(): number { return this._anio_fundacion; }
-    set anio_fundacion(value: number) { this._anio_fundacion = value; }
+    get anioFundacion(): number { return this._anioFundacion; }
+    set anioFundacion(value: number) { this._anioFundacion = value; }
 
     get ciudad(): string { return this._ciudad; }
     set ciudad(value: string) { this._ciudad = value; }
 
-    get entrenador_actual(): string { return this._entrenador_actual; }
-    set entrenador_actual(value: string) { this._entrenador_actual = value; }
+    get entrenador(): string { return this._entrenador; }
+    set entrenador(value: string) { this._entrenador = value; }
 
-    get numero_aficionados(): number { return this._numero_aficionados; }
-    set numero_aficionados(value: number) { this._numero_aficionados = value; }
+    get numAficionados(): number { return this._numAficionados; }
+    set numAficionados(value: number) { this._numAficionados = value; }
 
     get colores(): string[] { return this._colores; }
     set colores(value: string[]) { this._colores = value; }
-    
+
+    get escudoUrl(): string { return this._escudoUrl; }
+    set escudoUrl(value: string) { this._escudoUrl = value; }
+
+    get puntos(): number { return this._puntos; }
+    set puntos(value: number) { this._puntos = value; }
+
+    get partidos_jugados(): number { return this._partidos_jugados; }
+    set partidos_jugados(value: number) { this._partidos_jugados = value; }
+
+    get partidos_ganados(): number { return this._partidos_ganados; }
+    set partidos_ganados(value: number) { this._partidos_ganados = value; }
+
+    get partidos_empatados(): number { return this._partidos_empatados; }
+    set partidos_empatados(value: number) { this._partidos_empatados = value; }
+
+    get partidos_perdidos(): number { return this._partidos_perdidos; }
+    set partidos_perdidos(value: number) { this._partidos_perdidos = value; }
+
+    get goles_favor(): number { return this._goles_favor; }
+    set goles_favor(value: number) { this._goles_favor = value; }
+
+    get goles_contra(): number { return this._goles_contra; }
+    set goles_contra(value: number) { this._goles_contra = value; }
+
+    get jugadores(): Jugador[] { return this._jugadores; }
+    set jugadores(value: Jugador[]) { this._jugadores = value; }    
     
     // Getters calculados
     get diferencia_goles(): number {

@@ -1,6 +1,40 @@
-<p>FUNCIONA</p>
-<p><b>Nombre: </b> 
-    <a [routerLink]="['/equipo', equipo.id]">
-        {{ equipo.nombre }}
-    </a>
-</p>
+<div *ngIf="equipo; else noEncontrado">
+
+  <h1>{{ equipo.nombre }}</h1>
+
+  <img 
+    [src]="equipo.escudoUrl" 
+    alt="Escudo {{ equipo.nombre }}" 
+    style="max-width: 150px; margin-bottom: 20px;"
+  >
+
+  <section>
+    <p><strong>Año de fundación:</strong> {{ equipo.anioFundacion }}</p>
+    <p><strong>Ciudad:</strong> {{ equipo.ciudad }}</p>
+    <p><strong>Entrenador:</strong> {{ equipo.entrenador }}</p>
+    <p><strong>Nº de aficionados:</strong> {{ equipo.numAficionados | number }}</p>
+    <p><strong>Colores:</strong> {{ equipo.colores.join(', ') }}</p>
+  </section>
+ 
+  <h2>Estadísticas</h2>
+
+  <ul>
+    <li>Puntos: {{ equipo.puntos }}</li>
+    <li>Partidos jugados: {{ equipo.partidos_jugados }}</li>
+    <li>Ganados: {{ equipo.partidos_ganados }}</li>
+    <li>Empatados: {{ equipo.partidos_empatados }}</li>
+    <li>Perdidos: {{ equipo.partidos_perdidos }}</li>
+    <li>Goles a favor: {{ equipo.goles_favor }}</li>
+    <li>Goles en contra: {{ equipo.goles_contra }}</li>
+    <li>Diferencia de goles: {{ equipo.diferencia_goles }}</li>
+  </ul>
+
+  <h2>Jugadores</h2>
+
+  <app-lista-jugadores [jugadores]="equipo.jugadores"></app-lista-jugadores>
+
+</div>
+
+<ng-template #noEncontrado>
+  <p>Equipo no encontrado.</p>
+</ng-template>

@@ -1,0 +1,19 @@
+<div *ngIf="jugador; else noEncontrado">
+
+  <h1>{{ jugador.nombre }}</h1>
+
+  <ul>
+    <li><strong>Año de nacimiento:</strong> {{ jugador.anioNacimiento }}</li>
+    <li><strong>Edad:</strong> {{ jugador.edad }}</li>
+    <li><strong>Posición:</strong> {{ jugador.posicion }}</li>
+    <li><strong>Dorsal:</strong> {{ jugador.dorsal }}</li>
+  </ul>
+
+  <a routerLink="/">← Volver</a>
+
+</div>
+
+<ng-template #noEncontrado>
+  <p>Jugador no encontrado.</p>
+  <a routerLink="/">Volver a inicio</a>
+</ng-template>

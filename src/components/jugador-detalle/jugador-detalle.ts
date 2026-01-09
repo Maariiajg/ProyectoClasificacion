@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-
-import { ListaJugadores } from '../lista-jugadores/lista-jugadores';
-import { Equipo } from '../../app/models/equipo';
+import { Jugador } from '../../app/models/jugador';
 import { Liga } from '../../app/services/liga';
- 
-@Component({
-  selector: 'app-equipo-detalle',
-  standalone: true,
-  imports: [CommonModule, RouterModule, ListaJugadores],
-  templateUrl: './equipo-detalle.html',
-  styleUrls: ['./equipo-detalle.css']
-})
-export class EquipoDetalle implements OnInit {
 
-  equipo?: Equipo;
+
+@Component({
+  selector: 'app-jugador-detalle',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  templateUrl: './jugador-detalle.html',
+  styleUrls: ['./jugador-detalle.css']
+})
+export class JugadorDetalle implements OnInit {
+
+  jugador?: Jugador;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +23,6 @@ export class EquipoDetalle implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.equipo = this.liga.getEquipoById(id);
+    this.jugador = this.liga.getJugadorById(id);
   }
-
 }
